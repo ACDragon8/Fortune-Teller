@@ -1,0 +1,86 @@
+import math
+def fortune_telling():
+  #points will determine the final outcome
+  #points increases based on questions answered
+  points = 0
+  Q1 = int(input("How old are you? : "))
+  while(Q1 <= 0 or Q1/Q1 != 1):
+    Q1 = int(input("How old are you? : "))
+
+  #add points depending on answer
+  if(0< Q1 and Q1 <= 25):
+    points += 5
+  if(25< Q1 and Q1 <= 50):
+    points += 10
+  if(50 < Q1 and Q1 <= 75):
+    points += 15
+  if(75 < Q1 and Q1 <= 100):
+    points += 20
+  if(100 < Q1):
+    print("You must be extrememly lucky.")
+    print("Respect+")
+    points +=25
+#asks second question
+  Q2 = input("What is your biological gender?(Answer M/F/T(Transgender) : ")
+  while(Q2.lower() != "m" and Q2.lower() !="f" and Q2.lower() != "t"):
+    Q2 = input("What is your biological gender?(Answer M/F/T(Transgender) : ")
+#determine points given
+  if(Q2.lower() == "m"):
+    points += 0
+  if(Q2.lower() == "f"):
+    points += 2
+  if(Q2.lower() == "t"):
+    points += 10
+  Q3 = input("Are you from a rich or poor family?(R(rich)/M(Middle)/P(poor)) : ")
+  while(Q3.lower() != "r" and Q3.lower() != "m" and Q3.lower() != "p"):
+    #determine points
+    Q3 = input("Are you from a rich or poor family?(R(rich)/M(Middle)/P(poor)) : ")
+  if(Q3.lower() == "r"):
+    points += 10
+  if(Q3.lower() == "m"):
+    points += 20
+  if(Q3.lower() == "p"):
+    points += 30
+  Q4 = input("What is your country's form of government(De(democracy)/M(Monarchy)/Di(Dictatorship) : ")
+  while(Q4.lower() != "de" and Q4.lower() != "m" and Q4.lower() != "di"):
+    Q4 = input("What is your country's form of government(De(democracy)/M(Monarchy)/Di(Dictatorship) : ")
+  if(Q4.lower() == "de"):
+    points += 20
+  if(Q4.lower() == "m"):
+    points += 40
+  if(Q4.lower() == "di"):
+    points += 80
+  Q5 = int(input("On a scale of 1 - 100 how lucky do you conider yourself?(100 being very lucky and 1 being unucky) : "))
+  while(Q5 < 1 and Q5 > 100):
+    Q5 = int(input("On a scale of 1 - 100 how lucky do you conider yourself?(100 being very lucky and 1 being unucky) : "))
+  #point calculation
+  points += 10 - round(Q5/10)
+
+  #Results
+  if(35 <= points and points <= 45):
+    print("You have a bright future waiting for you, or maybe it's already here")
+  if(45 < points and points <= 55):
+    print("You have a great future with very few problems to deal with")
+  if(55 < points and points <= 65):
+    print("You have a good future with just some minor problems")
+  if(65 < points and points <= 75):
+    print("You have a decent future with some problems that are not too major")
+  if(75 < points and points <= 85):
+    print("Your future is not any better than normal")
+  if(85 < points and points <= 95):
+    print("Your future consists of maybe a physical labor job with some concerns")
+  if(95 < points and points <= 105):
+    print("Your future could be worse")
+  if(105 < points and points <= 115):
+    print("You will be struggling to make ends meet, but it is not the worst")
+  if(115 < points and points <= 125):
+    print("your future seems hopeless but you can still climb out")
+  if(125 < points and points <= 135):
+    print("Your future will only deteriorate from here on out")
+  if(135 < points and points <= 145):
+    print("Your future is very dark and grim")
+  if(145 < points and points <= 155):
+    print("I'm sorry, but you will die soon, but congradulations on surviving this long")
+#return output, something like print(fortune)
+fortune_telling();
+input("press enter to exit this tab")
